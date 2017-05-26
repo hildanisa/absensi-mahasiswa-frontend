@@ -1,3 +1,4 @@
+import {NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { Tables } from './tables.component';
@@ -12,12 +13,14 @@ const routes: Routes = [
     path: '',
     component: Tables,
     children: [
+    { path: 'dashboard', component: BasicTables },
       { path: 'basictables', component: BasicTables },
       { path: 'smarttables', component: SmartTables },
       { path: 'datatables', component: DataTables },
       { path: 'hottables', component: HotTablesComponent }
     ]
   }
+  
 ];
 
 export const routing = RouterModule.forChild(routes);

@@ -13,13 +13,12 @@ export class FinanceDemoComponent {
 
   constructor() {
     this.data = getFinanceData();
-    this.colHeaders = ['Price', 'Date', '1D Chg', 'YTD Chg', 'Vol BTC'];
+    this.colHeaders = ['Nama', 'Tanggal', 'Keterangan', 'Jumlah jam'];
     this.columns = [
-      {type: 'numeric', format: '$0,0.00'},
+      {type: 'numeric'},
       {type: 'date', dateFormat: 'DD/MM/YYYY', correctFormat: true},
-      {type: 'numeric', format: '0.00%'},
-      {type: 'numeric', format: '0.00%'},
-      {type: 'numeric', format: '0.00'}
+      {type: 'numeric'},
+      {type: 'numeric'}
     ];
     this.options = {
       height: 396,
