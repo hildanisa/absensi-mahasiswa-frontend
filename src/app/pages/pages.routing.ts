@@ -15,6 +15,11 @@ export const routes: Routes = [
     loadChildren: 'app/pages/register/register.module#RegisterModule'
   },
   {
+      path: 'homeabsen',
+    loadChildren: 'app/pages/homeabsen/homeabsen.module#HomeabsenModule'
+  },
+  
+  {
     path: 'pages',
     component: Pages,
     children: [
