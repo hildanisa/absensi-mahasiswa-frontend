@@ -1,0 +1,192 @@
+<md-tab-group>
+  <md-tab label="Input Data">
+
+            <div class="container rounded">
+              <div class="padding">
+
+            <div class="row">
+              <div class="form-group">
+
+                <div class="col-md-1  spasi-bawah">
+                  <label class="control-label" for="nama" >Kelas  </label>
+                </div>
+                <div class="col-md-11  spasi-bawah">
+                            <select (change)="onChange($event.target.value)" style="width: 500px" placeholder="ketikkan aja" class="form-control" required
+                                   [(ngModel)]="kelas">
+                              <option *ngFor="let i of kelas">{{i}}</option>
+                            </select>
+
+               </div>
+
+                          <div class="col-md-1   spasi-bawah">
+                            <label class="control-label" for="nama" >Nama  </label>
+                          </div>
+                          <div class="col-md-11  spasi-bawah">
+                             <input type="text" style="width: 500px" placeholder="ketikkan aja" class="form-control" required
+                                    [(ngModel)]="nama">
+                         </div>
+
+                         <div class="col-md-1   spasi-bawah">
+                           <label class="control-label" for="nim" >NIM  </label>
+                         </div>
+                         <div class="col-md-11  spasi-bawah">
+                            <input type="text" style="width: 500px" placeholder="ketikkan aja" class="form-control" required
+                                   [(ngModel)]="NIM">
+                        </div>
+
+                        <div class="col-md-1 spasi-bawah">
+                          <label class="control-label" for="tanggal" >Tanggal  </label>
+                        </div>
+                        <div class="col-md-11  spasi-bawah">
+                           <input type="date" style="width: 500px" placeholder="ketikkan aja" class="form-control" required
+                                  [(ngModel)]="tanggal">
+                       </div>
+            </div>
+        </div>
+
+              <div>
+                  <p>Tidak menghadiri kelas pada:</p>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                          <th *ngFor="let a of fakeArray; let index = index">Jam ke-{{ index + 1}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                      <th *ngFor="let a of fakeArray; let index = index">
+                        <form>
+                          <select (change)="onChange($event.target.value)">
+                            <option *ngFor="let i of keterangan">{{i}}</option>
+                          </select>
+                        </form>
+                      </th>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
+
+                  <div class="col-lg-12 col-xs-12">
+                    <div class="pull-right">
+          <button type="button" class="btn btn-primary">Submit</button>
+          <input type="file"  placeholder="import" accept=".xlsx">
+
+                    </div>
+                </div>
+              </div>
+              </div>
+
+  </md-tab>
+<md-tab label="Rekap">
+
+  <div class="container rounded">
+    <div class="padding">
+
+  <div class="row">
+    <div class="form-group">
+
+      <div class="col-md-1  spasi-bawah">
+        <label class="control-label" for="nama" >Kelas  </label>
+      </div>
+      <div class="col-md-11  spasi-bawah">
+                  <select (change)="onChange($event.target.value)" style="width: 500px" placeholder="ketikkan aja" class="form-control" required
+                         [(ngModel)]="kelas">
+                    <option *ngFor="let i of kelas">{{i}}</option>
+                  </select>
+
+     </div>
+
+                <div class="col-md-1   spasi-bawah">
+                  <label class="control-label" for="nama" >Nama  </label>
+                </div>
+                <div class="col-md-11  spasi-bawah">
+                   <input type="text" style="width: 500px" placeholder="ketikkan aja" class="form-control" required
+                          [(ngModel)]="nama">
+               </div>
+
+               <div class="col-md-1   spasi-bawah">
+                 <label class="control-label" for="nim" >NIM  </label>
+               </div>
+               <div class="col-md-11  spasi-bawah">
+                  <input type="text" style="width: 500px" placeholder="ketikkan aja" class="form-control" required
+                         [(ngModel)]="NIM">
+              </div>
+
+              <div class="col-md-1 spasi-bawah">
+                <label class="control-label" for="tanggal" >Tanggal  </label>
+              </div>
+              <div class="col-md-11  spasi-bawah">
+                 <input type="date" style="width: 500px" placeholder="ketikkan aja" class="form-control" required
+                        [(ngModel)]="tanggal">
+             </div>
+  </div>
+</div>
+
+    <div>
+        <p>Tidak menghadiri kelas pada:</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+                <th *ngFor="let a of fakeArray; let index = index">Jam ke-{{ index + 1}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            <th *ngFor="let a of fakeArray; let index = index">
+              <form>
+                <select (change)="onChange($event.target.value)">
+                  <option *ngFor="let i of keterangan">{{i}}</option>
+                </select>
+              </form>
+            </th>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="col-lg-12 col-xs-12">
+          <div class="pull-right">
+<button type="button" class="btn btn-primary">Import</button>
+<button type="button" class="btn btn-primary">Submit</button>
+          </div>
+      </div>
+    </div>
+    </div>
+
+
+  </md-tab>
+
+
+
+  <md-tab label="Rekapitulasi">
+    <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
+    shiw = {{show}}
+    <br>
+    <div *ngIf="show">
+      <li *ngFor="let hero of heroes">
+              {{ hero }}
+            </li>
+    </div>
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+        <th *ngFor="let a of fakeArray; let index = index">Jam ke-{{ index + 1}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th *ngFor="let a of fakeArray; let index = index">
+      <form>
+        <select (change)="onChange($event.target.value)">
+          <option *ngFor="let i of keterangan">{{i}}</option>
+        </select>
+      </form>
+    </th>
+    </tr>
+  </tbody>
+</table>
+
+  </md-tab>
+</md-tab-group>

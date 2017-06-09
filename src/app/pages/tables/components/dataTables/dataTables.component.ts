@@ -10,9 +10,9 @@ export class DataTables {
 
     data;
     filterQuery = "";
-    rowsOnPage = 10;
-    sortBy = "email";
-    sortOrder = "asc";
+    rowsOnPage = 30;
+    sortBy = "date";
+    sortOrder = "desc";
 
     constructor(private service: DataTablesService) {
     this.service.getData().then((data) => {
@@ -27,5 +27,5 @@ export class DataTables {
     sortByWordLength = (a: any) => {
         return a.city.length;
     }
-  
+
 }

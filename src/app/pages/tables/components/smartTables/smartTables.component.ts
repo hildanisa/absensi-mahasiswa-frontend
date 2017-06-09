@@ -13,11 +13,6 @@ export class SmartTables {
   query: string = '';
 
   settings = {
-    add: {
-      addButtonContent: '<i class="ion-ios-plus-outline"></i>',
-      createButtonContent: '<i class="ion-checkmark"></i>',
-      cancelButtonContent: '<i class="ion-close"></i>',
-    },
     edit: {
       editButtonContent: '<i class="ion-edit"></i>',
       saveButtonContent: '<i class="ion-checkmark"></i>',
@@ -28,28 +23,24 @@ export class SmartTables {
       confirmDelete: true
     },
     columns: {
-      id: {
-        title: 'ID',
+      NIM: {
+        title: 'NIM',
         type: 'number'
       },
-      firstName: {
-        title: 'First Name',
+      Nama: {
+        title: 'Nama',
         type: 'string'
       },
-      lastName: {
-        title: 'Last Name',
-        type: 'string'
+      Sakit: {
+        title: 'Sakit',
+        type: 'number'
       },
-      username: {
-        title: 'Username',
-        type: 'string'
+      Alpa: {
+        title: 'Alpa',
+        type: 'number'
       },
-      email: {
-        title: 'E-mail',
-        type: 'string'
-      },
-      age: {
-        title: 'Age',
+      Izin: {
+        title: 'Izin',
         type: 'number'
       }
     }
